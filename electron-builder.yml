@@ -141,22 +141,72 @@ artifactBuildCompleted: scripts/artifact-build-completed.js
 releaseInfo:
   releaseNotes: |
     <!--LANG:en-->
-    Cherry Studio 1.8.4 - Bug Fixes and New Features
+    Cherry Studio 1.9.0 - Major Agent & AI Enhancements
 
     ✨ New Features
-    - [API] Add knowledge base REST API endpoints
-    - [SelectionAssistant] Add Linux support for text selection toolbar
+    - [Agents] Add CherryClaw autonomous agent type with personality-driven scheduling, Telegram integration, and sandbox mode
+    - [Agents] Add terminal-style syntax highlighting for shell tool outputs (Bash, Grep, Glob)
+    - [MCP] Add flomo as a built-in MCP server for capturing notes and ideas via AI
+    - [Agents] Integrate rtk to reduce token consumption by 60-90% for shell commands
+    - [Agents] Improved tool rendering: syntax-highlighted diffs with unified/split toggle, line numbers, and material file type icons
+    - [Topics] Respect pinTopicsToTop setting in Topics list
+    - [Models] Add endpoint option for aionly provider and update default models
+    - [ErrorHandling] Add AI-powered error diagnosis with automatic classification, translation, and guided resolution
 
     🐛 Bug Fixes
-    - [Files] Fix PDF upload failing with "invalid part type: file" error for OpenAI-compatible providers (Moonshot, DeepSeek, Groq, etc.)
+    - [Models] Fix new-api provider using configured host for Anthropic format requests
+    - [Agents] Fix Claude Code sessions respecting proxy settings for child processes
+    - [Agents] Validate working directory before launching code tool
+    - [Knowledge] Fix epub embedding failure by migrating to v2 async API
+    - [Notes] Fix KaTeX backslash corruption when toggling editor modes
+    - [Thinking] Fix thinking time display race condition
+    - [Models] Fix Poe provider model loading and update default models
+    - [Models] Fix kimi-cli crash when uv binary is not found
+    - [Models] Fix invalid env variable names for providers with dots in name (e.g., z.ai)
+    - [Models] Fix NVIDIA provider reasoning parameters for Qwen/DeepSeek/Kimi/Zhipu models
+    - [Models] Fix Google Gemini web search for models fetched from Google API
+    - [Models] Fix Qwen3.5 model detection to support 3.9 series
+    - [Updater] Fallback to latest channel when test channel is null
+    - [Backup] Fix backup file size regression (now uses minimal compression)
+
+    💄 Improvements
+    - [UI] Fix macOS traffic light alignment in custom title bar
+
+    ⚡ Performance
+    - [Backup] Optimize backup compression level for faster backups
 
     <!--LANG:zh-CN-->
-    Cherry Studio 1.8.4 - 错误修复和新功能
+    Cherry Studio 1.9.0 - 重大智能体和 AI 增强功能
 
     ✨ 新功能
-    - [API] 添加知识库 REST API 端点
-    - [选择助手] 为文本选择工具栏添加 Linux 支持
+    - [智能体] 新增 CherryClaw 自主智能体类型，支持个性化调度、Telegram 集成和沙箱模式
+    - [智能体] 为 shell 工具输出添加终端风格语法高亮（Bash、Grep、Glob）
+    - [MCP] 新增 flomo 内置 MCP 服务器，支持通过 AI 捕捉笔记和灵感
+    - [智能体] 集成 rtk，将 shell 命令的 token 消耗减少 60-90%
+    - [智能体] 改进工具渲染：语法高亮差异视图（统一/分屏切换）、行号和材质文件类型图标
+    - [话题] 话题列表支持置顶设置
+    - [模型] 为 aionly 提供商添加端点选项并更新默认模型
+    - [错误处理] 新增 AI 驱动的错误诊断，支持自动分类、翻译和引导式解决方案
 
     🐛 问题修复
-    - [文件] 修复 OpenAI 兼容提供商（Moonshot、DeepSeek、Groq 等）的 PDF 上传失败问题（"invalid part type: file" 错误）
+    - [模型] 修复 new-api 提供商在 Anthropic 格式请求时未使用配置主机的问题
+    - [智能体] 修复 Claude Code 会话子进程未遵守代理设置的问题
+    - [智能体] 启动代码工具前验证工作目录
+    - [知识库] 修复 epub 嵌入失败问题（迁移到 v2 异步 API）
+    - [笔记] 修复切换编辑器模式时 KaTeX 反斜杠损坏的问题
+    - [思考] 修复思考时间显示竞态条件
+    - [模型] 修复 Poe 提供商模型加载问题并更新默认模型
+    - [模型] 修复 kimi-cli 在找不到 uv 二进制文件时崩溃的问题
+    - [模型] 修复名称包含点的提供商（如 z.ai）的环境变量名称无效问题
+    - [模型] 修复 NVIDIA 提供商的 Qwen/DeepSeek/Kimi/Zhipu 模型推理参数
+    - [模型] 修复从 Google API 获取的模型的 Google Gemini 网络搜索问题
+    - [模型] 修复 Qwen3.5 模型检测以支持 3.9 系列
+    - [更新器] 测试频道为空时回退到最新频道
+    - [备份] 修复备份文件大小回归问题（现使用最小压缩）
+
+    💄 改进
+    - [UI] 修复 macOS 自定义标题栏中红绿灯控件对齐问题
+
+    ⚡ 性能优化
+    - [备份] 优化备份压缩级别以加快备份速度
     <!--LANG:END-->
